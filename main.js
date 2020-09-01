@@ -48,13 +48,14 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
-
+// var allCoffees = document.querySelector('#all-coffees')
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
 
 tbody.innerHTML = renderCoffees(coffees);
 
+// allCoffees.addEventListener('click', renderCoffees);
 submitButton.addEventListener('click', updateCoffees);
 
 // var coffeeLight = document.querySelector("#coffee-light");
@@ -65,8 +66,9 @@ var coffeeName = document.getElementById('coffeeName');
 coffeeName.addEventListener("keyup", function(){
     //TODO: Include an if statement that counts the characters in the search bar before starting the new array
     var newSearch = [];
+    var selectedRoast = roastSelection.value;
     for(var i = 0; i < coffees.length; i++){
-        if(coffees[i].name.toLowerCase().indexOf(coffeeName.value) > -1){
+        if(coffees[i].name.toLowerCase().indexOf(coffeeName.value) > -1 && coffees[i].roast === selectedRoast){
             newSearch.push("<li>" + coffees[i].name + " " + coffees[i].roast + "</li>");
         }
         tbody.innerHTML = newSearch.join(" ");
