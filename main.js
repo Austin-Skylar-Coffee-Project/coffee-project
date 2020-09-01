@@ -2,10 +2,9 @@
 
 function renderCoffee(coffee) {
     var html = '<div class="coffee">';
-    html += coffee.name
-    html += coffee.roast
+    html += coffee.name;
+    html += coffee.roast;
     html += '</div>';
-
     return html;
 }
 
@@ -58,19 +57,29 @@ tbody.innerHTML = renderCoffees(coffees);
 submitButton.addEventListener('click', updateCoffees);
 
 var coffeeName = document.getElementById('coffeeName');
+coffeeName.addEventListener("keyup", function(){
+    //TODO: Include an if statement that counts the characters in the search bar before starting the new array
+    var newSearch = [];
+    for(var i = 0; i < coffees.length; i++){
+        if(coffees[i].name.toLowerCase().indexOf(coffeeName.value) > -1){
+            newSearch.push(coffees[i].name + " " + coffees[i].roast);
+        }
+        tbody.innerHTML = newSearch;
+    }
+})
 // coffeeName.addEventListener('change', ****)
-
-function coffeeUpdater(update){
-    console.log(coffeeName.value)
-    coffees.map(function(algo){
-        update.split(" ").map(function (word){
-            if(algo.toLowerCase().indexOf(word.toLowerCase()) != -1){
-                //TODO: finish real-time search function.
-            }
-        })
-    });
+//
+// function coffeeUpdater(update){
+//     console.log(coffeeName.value)
+//     coffees.map(function(algo){
+//         update.split(" ").map(function (word){
+//             if(algo.toLowerCase().indexOf(word.toLowerCase()) != -1){
+//                 //TODO: finish real-time search function.
+//             }
+//         })
+//     });
 
     // for(var i = 0; i < coffeeName.value.length; i++){
     //
-    // }
-}
+//     // }
+// }
