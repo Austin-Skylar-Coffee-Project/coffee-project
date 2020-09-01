@@ -3,6 +3,7 @@
 function renderCoffee(coffee) {
     var html = '<div class="coffee">';
     html += coffee.name;
+    html += ' ';
     html += coffee.roast;
     html += '</div>';
     return html;
@@ -56,18 +57,23 @@ tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
 
+// var coffeeLight = document.querySelector("#coffee-light");
+// var coffeeMedium = document.querySelector("#coffee-med");
+// var coffeeDark = document.querySelector("#coffee-dark");
+
 var coffeeName = document.getElementById('coffeeName');
 coffeeName.addEventListener("keyup", function(){
     //TODO: Include an if statement that counts the characters in the search bar before starting the new array
     var newSearch = [];
     for(var i = 0; i < coffees.length; i++){
         if(coffees[i].name.toLowerCase().indexOf(coffeeName.value) > -1){
-            newSearch.push(coffees[i].name + " " + coffees[i].roast);
+            newSearch.push("<li>" + coffees[i].name + " " + coffees[i].roast + "</li>");
         }
-        tbody.innerHTML = newSearch;
+        tbody.innerHTML = newSearch.join(" ");
     }
-})
-// coffeeName.addEventListener('change', ****)
+});
+
+// coffeeLight.addEventListener("click", )
 //
 // function coffeeUpdater(update){
 //     console.log(coffeeName.value)

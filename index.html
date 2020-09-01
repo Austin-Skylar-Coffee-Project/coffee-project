@@ -21,8 +21,8 @@
         <hr>
 
         <div class="row">
-            <ul id="coffees" class="col-6 container d-flex">
-                <li class="flex-column"></li>
+            <ul id="coffees" class="col-6 container inline-block no-list-style">
+                <li></li>
             </ul>
             <div>
 
@@ -30,9 +30,9 @@
             <form class="col-6">
                 <label for="roast-selection">Roast</label>
                 <select id="roast-selection" class="dropdown">
-                    <option>light</option>
-                    <option>medium</option>
-                    <option>dark</option>
+                    <option id="coffee-light" selected disabled>light</option>
+                    <option id="coffee-med">medium</option>
+                    <option id="coffee-dark">dark</option>
                 </select>
                 <br>
                 <input id="coffeeName" oninput="this.value" type="search">
