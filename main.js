@@ -58,10 +58,19 @@ tbody.innerHTML = renderCoffees(coffees);
 submitButton.addEventListener('click', updateCoffees);
 
 var coffeeName = document.getElementById('coffeeName');
-coffeeName.addEventListener('change',function (
-) {
-    console.log(coffeeName.value)
-    for(var i = 0; i < coffeeName.value.length; i++){
+// coffeeName.addEventListener('change', ****)
 
-    }
-})
+function coffeeUpdater(update){
+    console.log(coffeeName.value)
+    coffees.map(function(algo){
+        update.split(" ").map(function (word){
+            if(algo.toLowerCase().indexOf(word.toLowerCase()) != -1){
+                //TODO: finish real-time search function.
+            }
+        })
+    });
+
+    // for(var i = 0; i < coffeeName.value.length; i++){
+    //
+    // }
+}
