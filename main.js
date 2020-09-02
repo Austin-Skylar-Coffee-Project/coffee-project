@@ -24,6 +24,8 @@ function updateCoffees(e) {
     coffees.forEach(function (coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
+        } else if (selectedRoast === "All"){
+            filteredCoffees.push(coffee);
         }
         ;
         tbody.innerHTML = renderCoffees(filteredCoffees);
@@ -48,14 +50,16 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
-// var allCoffees = document.querySelector('#all-coffees')
+var allCoffees = document.querySelector('#all-coffees')
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
 
 tbody.innerHTML = renderCoffees(coffees);
 
-// allCoffees.addEventListener('click', renderCoffees);
+// allCoffees.addEventListener('click', function () {
+//     tbody.innerHTML = renderCoffees(coffees);
+// });
 submitButton.addEventListener('click', updateCoffees);
 
 // var coffeeLight = document.querySelector("#coffee-light");
@@ -68,7 +72,7 @@ coffeeName.addEventListener("keyup", function(){
     var newSearch = [];
     var selectedRoast = roastSelection.value;
     for(var i = 0; i < coffees.length; i++){
-        if(coffees[i].name.toLowerCase().indexOf(coffeeName.value) > -1 && coffees[i].roast === selectedRoast){
+        if(coffees[i].name.toLowerCase().indexOf(coffeeName.value) > -1 && (coffees[i].roast === selectedRoast || selectedRoast === "All")){
             newSearch.push("<li>" + coffees[i].name + " " + coffees[i].roast + "</li>");
         }
         tbody.innerHTML = newSearch.join(" ");
