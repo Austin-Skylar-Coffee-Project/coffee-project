@@ -60,6 +60,7 @@ tbody.innerHTML = renderCoffees(coffees);
 // allCoffees.addEventListener('click', function () {
 //     tbody.innerHTML = renderCoffees(coffees);
 // });
+roastSelection.addEventListener('change',updateCoffees);
 submitButton.addEventListener('click', updateCoffees);
 
 // var coffeeLight = document.querySelector("#coffee-light");
