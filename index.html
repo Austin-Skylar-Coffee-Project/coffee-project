@@ -24,21 +24,42 @@
             <ul id="coffees" class="col-6 container inline-block no-list-style">
                 <li></li>
             </ul>
-            <div>
 
-            </div>
             <form class="col-6">
-                <label for="roast-selection">Roast</label>
-                <select id="roast-selection" class="dropdown">
-                    <option id="all-coffees">All</option>
-                    <option id="coffee-light">light</option>
-                    <option id="coffee-med">medium</option>
-                    <option id="coffee-dark">dark</option>
-                </select>
-                <br>
-                <input id="coffeeName" oninput="this.value" type="search">
-                <br>
-                <input id="submit" type="submit" />
+<!--                <label for="roast-selection">Roast</label>-->
+<!--                <select id="roast-selection" class="dropdown">-->
+<!--                    <option id="all-coffees">All</option>-->
+<!--                    <option id="coffee-light">light</option>-->
+<!--                    <option id="coffee-med">medium</option>-->
+<!--                    <option id="coffee-dark">dark</option>-->
+<!--                </select>-->
+
+
+                <div class="card w-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Roast</h5>
+                        <div class="input-group mb-3">
+<!--                            <label for="roast-selection">Roast</label>-->
+                            <select class="custom-select dropdown" id="roast-selection">
+                                <option id="all-coffees" selected>All</option>
+                                <option id="coffee-light">light</option>
+                                <option id="coffee-med">medium</option>
+                                <option id="coffee-dark">dark</option>
+                            </select>
+                        </div>
+
+                        <h5 class="card-title">Coffee Name</h5>
+                        <div class="input-group mb-3">
+                            <input id="coffeeName" oninput="this.value" type="search" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                        </div>
+
+<!--                        <input id="coffeeName" oninput="this.value" type="search">-->
+                        <button type="button" class="btn btn-primary btn-lg btn-block" id="submit">Submit</button>
+                    </div>
+                </div>
+
+<!--                <input id="coffeeName" oninput="this.value" type="search">-->
+<!--                <input id="submit" type="submit" />-->
             </form>
         </div>
     </main>
