@@ -68,7 +68,7 @@ coffeeName.addEventListener("keyup", function(){
     var selectedRoast = roastSelection.value;
     for(var i = 0; i < coffees.length; i++){
         if(coffees[i].name.toLowerCase().indexOf(coffeeName.value) > -1 && (coffees[i].roast === selectedRoast || selectedRoast === "All")){
-            newSearch.push("<li>" + coffees[i].name + " " + coffees[i].roast + "</li>");
+            newSearch.push("<li>" +  coffees[i].name + " " + coffees[i].roast + "</li>");
         }
         tbody.innerHTML = newSearch.join(" ");
     }
