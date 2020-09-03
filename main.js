@@ -96,3 +96,8 @@ function coffeeSubmit(){
 }
 
 submitAdd.addEventListener('click', coffeeSubmit);
+
+window.onload = function () {
+    var fadeIn = document.getElementsByClassName("fadeIn");
+    fadeIn[0].style.opacity = 1;
+}

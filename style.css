@@ -33,4 +33,7 @@ body {
 .jumbotron {
     /*background-color: #3d4244;*/
 }
-
+.fadeIn {
+    opacity:0;
+    transition:2s;
+}
