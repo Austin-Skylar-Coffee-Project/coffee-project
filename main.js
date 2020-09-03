@@ -1,11 +1,15 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    var html = '<div class="coffee">';
+    var html = '<li class="coffee">';
+    html += '<span class="nameStyle">';
     html += coffee.name;
+    html += '</span>';
     html += ' ';
+    html += '<span class="roastStyle">';
     html += coffee.roast;
-    html += '</div>';
+    html += '</span>';
+    html += '</li>';
     return html;
 }
 
@@ -69,7 +73,7 @@ coffeeName.addEventListener("keyup", function(){
     for(var i = 0; i < coffees.length; i++){
         if(coffees[i].name.toLowerCase().indexOf(coffeeName.value) > -1 && (coffees[i].roast === selectedRoast || selectedRoast === "All")){
             //TODO Add spans to roast with class to apply styles
-            newSearch.push("<li class='selectedCoffee'>" +  coffees[i].name + " " + coffees[i].roast + "</li>");
+            newSearch.push("<li class='selectedCoffee'>" + "<span class='nameStyle'>" + coffees[i].name +"</span>" +  " " + "<span class='roastStyle'>" + coffees[i].roast +"</span>"+ "</li>");
         }
         tbody.innerHTML = newSearch.join(" ");
     }
