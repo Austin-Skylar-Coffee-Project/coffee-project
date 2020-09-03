@@ -25,3 +25,12 @@ td, th {
 ul {
     height: 620px;
 }
+body {
+    background-image: url("chalkboard_pic.jpg");
+    font-family: 'Permanent Marker', cursive;
+    color: lightgrey;
+}
+.jumbotron {
+    /*background-color: #3d4244;*/
+}
+
