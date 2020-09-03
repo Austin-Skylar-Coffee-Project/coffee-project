@@ -67,12 +67,10 @@ submitButton.addEventListener('click', updateCoffees);
 
 var coffeeName = document.getElementById('coffeeName');
 coffeeName.addEventListener("keyup", function(){
-    //TODO: Include an if statement that counts the characters in the search bar before starting the new array
     var newSearch = [];
     var selectedRoast = roastSelection.value;
     for(var i = 0; i < coffees.length; i++){
-        if(coffees[i].name.toLowerCase().indexOf(coffeeName.value) > -1 && (coffees[i].roast === selectedRoast || selectedRoast === "All")){
-            //TODO Add spans to roast with class to apply styles
+        if((coffees[i].name.toLowerCase().indexOf(coffeeName.value) > -1||coffees[i].name.toUpperCase().indexOf(coffeeName.value) > -1) && (coffees[i].roast === selectedRoast || selectedRoast === "All")){
             newSearch.push("<li class='selectedCoffee'>" + "<span class='nameStyle'>" + coffees[i].name +"</span>" +  " " + "<span class='roastStyle'>" + coffees[i].roast +"</span>"+ "</li>");
         }
         tbody.innerHTML = newSearch.join(" ");
