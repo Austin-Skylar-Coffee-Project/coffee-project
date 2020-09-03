@@ -11,3 +11,17 @@ td, th {
 .no-list-style {
     list-style: none;
 }
+
+.nameStyle {
+    font-weight: bold;
+    font-size: 2.5em;
+}
+
+.roastStyle {
+    color: grey;
+    font-size: 1.5em;
+}
+
+ul {
+    height: 620px;
+}

@@ -11,53 +11,73 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main class="container">
-        <div class="jumbotron jumbotron-fluid bg-white pb-0">
-            <div class="container col-12 text-center">
-                <h1 class="display-4">Coffee!</h1>
-            </div>
+<main class="container">
+    <div class="jumbotron jumbotron-fluid bg-white pb-0">
+        <div class="container col-12 text-center">
+            <h1 class="display-4">Coffee!</h1>
         </div>
+    </div>
 
-        <hr>
+    <hr>
 
-        <div class="row">
-            <ul id="coffees" class="col-6 container inline-block no-list-style">
-                <li></li>
-            </ul>
-            <div>
+    <div class="row">
+        <ul id="coffees" class="col-6 container no-list-style d-flex flex-column flex-wrap">
+            <li></li>
+        </ul>
 
+        <form class="col-6">
+
+            <!--                       ~~~~~~~~~~~~~~~~~~~~~~~First Card~~~~~~~~~~~~~~~-->
+            <div class="card border-0 w-100">
+                <div class="card-body">
+                    <h5 class="card-title">Roast</h5>
+                    <div class="input-group mb-3">
+                        <select class="custom-select dropdown" id="roast-selection">
+                            <option id="all-coffees" selected>All</option>
+                            <option id="coffee-light">light</option>
+                            <option id="coffee-med">medium</option>
+                            <option id="coffee-dark">dark</option>
+                        </select>
+                    </div>
+
+                    <h5 class="card-title">Coffee Name</h5>
+                    <div class="input-group mb-3">
+                        <input id="coffeeName" oninput="this.value" type="search" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+
+                    <button type="button" class="btn btn-primary btn-lg btn-block" id="submit">Submit</button>
+                </div>
             </div>
-            <form class="col-6">
-                <label for="roast-selection">Roast</label>
-                <select id="roast-selection" class="dropdown">
-                    <option id="all-coffees">All</option>
-                    <option id="coffee-light">light</option>
-                    <option id="coffee-med">medium</option>
-                    <option id="coffee-dark">dark</option>
-                </select>
-                <br>
-                <input id="coffeeName" oninput="this.value" type="search">
-                <br>
-                <input id="submit" type="submit" />
-            </form>
-        </div>
-    </main>
-<!--    <table>-->
-<!--        <thead>-->
-<!--            <tr>-->
-<!--                <th>ID</th>-->
-<!--                <th>NAME</th>-->
-<!--                <th>ROAST</th>-->
-<!--            </tr>-->
-<!--        </thead>-->
-<!--        <tbody id="coffees"></tbody>-->
-<!--    </table>-->
 
+            <hr>
+            <!--                       ~~~~~~~~~~~~~~~~~~~~~~~Second Card~~~~~~~~~~~~~~~-->
+            <h1 class="display-6 text-center">Add a Coffee</h1>
+            <div class="card border-0 w-100">
+                <div class="card-body">
+                    <h5 class="card-title">Roast</h5>
+                    <div class="input-group mb-3">
+                        <select class="custom-select dropdown" id="addSelection">
+                            <option id="coffee-light-add">light</option>
+                            <option id="coffee-med-add">medium</option>
+                            <option id="coffee-dark-add">dark</option>
+                        </select>
+                    </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-    <!-- Your custom JS goes here -->
-    <script src="main.js"></script>
+                    <h5 class="card-title">Name</h5>
+                    <div class="input-group mb-3">
+                        <input id="newCoffee" oninput="this.value" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <button type="button" class="btn btn-primary btn-lg btn-block" id="submitAdd">Submit</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</main>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<!-- Your custom JS goes here -->
+<script src="main.js"></script>
 </body>
 </html>

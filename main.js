@@ -1,11 +1,15 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    var html = '<div class="coffee">';
+    var html = '<li class="coffee">';
+    html += '<span class="nameStyle">';
     html += coffee.name;
+    html += '</span>';
     html += ' ';
+    html += '<span class="roastStyle">';
     html += coffee.roast;
-    html += '</div>';
+    html += '</span>';
+    html += '</li>';
     return html;
 }
 
@@ -50,22 +54,16 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
-var allCoffees = document.querySelector('#all-coffees')
+
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
 
 tbody.innerHTML = renderCoffees(coffees);
 
-// allCoffees.addEventListener('click', function () {
-//     tbody.innerHTML = renderCoffees(coffees);
-// });
 roastSelection.addEventListener('change',updateCoffees);
 submitButton.addEventListener('click', updateCoffees);
 
-// var coffeeLight = document.querySelector("#coffee-light");
-// var coffeeMedium = document.querySelector("#coffee-med");
-// var coffeeDark = document.querySelector("#coffee-dark");
 
 var coffeeName = document.getElementById('coffeeName');
 coffeeName.addEventListener("keyup", function(){
@@ -74,25 +72,27 @@ coffeeName.addEventListener("keyup", function(){
     var selectedRoast = roastSelection.value;
     for(var i = 0; i < coffees.length; i++){
         if(coffees[i].name.toLowerCase().indexOf(coffeeName.value) > -1 && (coffees[i].roast === selectedRoast || selectedRoast === "All")){
-            newSearch.push("<li>" + coffees[i].name + " " + coffees[i].roast + "</li>");
-        };
+            //TODO Add spans to roast with class to apply styles
+            newSearch.push("<li class='selectedCoffee'>" + "<span class='nameStyle'>" + coffees[i].name +"</span>" +  " " + "<span class='roastStyle'>" + coffees[i].roast +"</span>"+ "</li>");
+        }
         tbody.innerHTML = newSearch.join(" ");
     }
 });
 
-// coffeeLight.addEventListener("click", )
-//
-// function coffeeUpdater(update){
-//     console.log(coffeeName.value)
-//     coffees.map(function(algo){
-//         update.split(" ").map(function (word){
-//             if(algo.toLowerCase().indexOf(word.toLowerCase()) != -1){
-//                 //TODO: finish real-time search function.
-//             }
-//         })
-//     });
+var addSelection = document.getElementById('addSelection');
+var newCoffee = document.getElementById('newCoffee');
+var submitAdd = document.getElementById('submitAdd');
+function newCoffeeAdd(id, name, roast){
+    var newEntry = {
+        id: id,
+        name: name,
+        roast: roast,
+    }
+    coffees.push(newEntry);
+    tbody.innerHTML = renderCoffees(coffees);
+}
+function coffeeSubmit(){
+    newCoffeeAdd(coffees.length + 1, newCoffee.value, addSelection.value);
+}
 
-    // for(var i = 0; i < coffeeName.value.length; i++){
-    //
-//     // }
-// }
+submitAdd.addEventListener('click', coffeeSubmit);
