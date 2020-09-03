@@ -43,3 +43,8 @@ body {
     opacity: 0;
     transition: 2s;
 }
+
+/*top submit button below*/
+#submit {
+    display: none;
+}
