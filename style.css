@@ -39,3 +39,7 @@ body {
     transition:2s;
 }
 
+.fadeInSlower {
+    opacity: 0;
+    transition: 2s;
+}

@@ -97,9 +97,16 @@ function coffeeSubmit(){
 
 submitAdd.addEventListener('click', coffeeSubmit);
 
-submitAdd.addEventListener('click', coffeeSubmit);
 
 window.onload = function () {
     var fadeIn = document.getElementsByClassName("fadeIn");
     fadeIn[0].style.opacity = 1;
+    var fadeInSlower = document.getElementsByClassName('fadeInSlower')
+    var listDelay = setTimeout(function () {
+        fadeInSlower[0].style.opacity = 1;
+    },1000)
+    var cardDelay = setTimeout(function () {
+        fadeInSlower[1].style.opacity = 1;
+    },2000)
+
 }
